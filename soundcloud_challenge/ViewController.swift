@@ -21,7 +21,15 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func showNowPlaying(){
+        
+    }
 
+    @IBAction func nowPlayingButtonTapped(_ sender: Any) {
+        
+        
+    }
 
 }
 
