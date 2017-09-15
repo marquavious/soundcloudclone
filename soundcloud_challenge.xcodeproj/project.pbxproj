@@ -12,6 +12,20 @@
 		C093553F1F6A2FD10033DD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C093553D1F6A2FD10033DD5C /* Main.storyboard */; };
 		C09355411F6A2FD10033DD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C09355401F6A2FD10033DD5C /* Assets.xcassets */; };
 		C09355441F6A2FD10033DD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C09355421F6A2FD10033DD5C /* LaunchScreen.storyboard */; };
+		C093554C1F6B39B10033DD5C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093554B1F6B39B10033DD5C /* Song.swift */; };
+		C093554E1F6B6AD40033DD5C /* MusicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093554D1F6B6AD40033DD5C /* MusicTableViewCell.swift */; };
+		C09355501F6B70DB0033DD5C /* 01. High Hopes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C093554F1F6B70DB0033DD5C /* 01. High Hopes.mp3 */; };
+		C09355521F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355511F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 */; };
+		C09355541F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355531F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 */; };
+		C09355561F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355551F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 */; };
+		C09355581F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355571F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 */; };
+		C093555A1F6B71AF0033DD5C /* Sampha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355591F6B71AF0033DD5C /* Sampha.mp3 */; };
+		C093555C1F6B71E20033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */; };
+		C093555F1F6B7D2F0033DD5C /* blck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C093555E1F6B7D2E0033DD5C /* blck.jpg */; };
+		C09355641F6B7D580033DD5C /* tiber.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355601F6B7D580033DD5C /* tiber.png */; };
+		C09355651F6B7D580033DD5C /* jamis.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355611F6B7D580033DD5C /* jamis.png */; };
+		C09355661F6B7D580033DD5C /* pndtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355621F6B7D580033DD5C /* pndtwo.png */; };
+		C09355671F6B7D580033DD5C /* sampha.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355631F6B7D580033DD5C /* sampha.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +36,21 @@
 		C09355401F6A2FD10033DD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C09355431F6A2FD10033DD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C09355451F6A2FD10033DD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C093554B1F6B39B10033DD5C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		C093554D1F6B6AD40033DD5C /* MusicTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicTableViewCell.swift; sourceTree = "<group>"; };
+		C093554F1F6B70DB0033DD5C /* 01. High Hopes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01. High Hopes.mp3"; sourceTree = "<group>"; };
+		C09355511F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "On My Mind_246964322_soundcloud.mp3"; sourceTree = "<group>"; };
+		C09355531F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bout It- PND_211209348_soundcloud.mp3"; sourceTree = "<group>"; };
+		C09355551F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "03 - Summer Friends (feat Jeremih Francis The Lights).mp3"; sourceTree = "<group>"; };
+		C09355571F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3"; sourceTree = "<group>"; };
+		C09355591F6B71AF0033DD5C /* Sampha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sampha.mp3; sourceTree = "<group>"; };
+		C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat soup - icasm 2096 - 09 ledge glow.mp3"; sourceTree = "<group>"; };
+		C093555D1F6B78290033DD5C /* 01 Sonic Boom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01 Sonic Boom.mp3"; sourceTree = "<group>"; };
+		C093555E1F6B7D2E0033DD5C /* blck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blck.jpg; sourceTree = "<group>"; };
+		C09355601F6B7D580033DD5C /* tiber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiber.png; sourceTree = "<group>"; };
+		C09355611F6B7D580033DD5C /* jamis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jamis.png; sourceTree = "<group>"; };
+		C09355621F6B7D580033DD5C /* pndtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pndtwo.png; sourceTree = "<group>"; };
+		C09355631F6B7D580033DD5C /* sampha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sampha.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +85,22 @@
 			children = (
 				C09355391F6A2FD10033DD5C /* AppDelegate.swift */,
 				C093553B1F6A2FD10033DD5C /* ViewController.swift */,
+				C093555E1F6B7D2E0033DD5C /* blck.jpg */,
+				C093554D1F6B6AD40033DD5C /* MusicTableViewCell.swift */,
+				C09355601F6B7D580033DD5C /* tiber.png */,
+				C09355611F6B7D580033DD5C /* jamis.png */,
+				C09355621F6B7D580033DD5C /* pndtwo.png */,
+				C09355631F6B7D580033DD5C /* sampha.png */,
 				C093553D1F6A2FD10033DD5C /* Main.storyboard */,
+				C093555D1F6B78290033DD5C /* 01 Sonic Boom.mp3 */,
+				C093554F1F6B70DB0033DD5C /* 01. High Hopes.mp3 */,
+				C09355551F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 */,
+				C09355591F6B71AF0033DD5C /* Sampha.mp3 */,
+				C09355571F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 */,
+				C09355531F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 */,
+				C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */,
+				C09355511F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 */,
+				C093554B1F6B39B10033DD5C /* Song.swift */,
 				C09355401F6A2FD10033DD5C /* Assets.xcassets */,
 				C09355421F6A2FD10033DD5C /* LaunchScreen.storyboard */,
 				C09355451F6A2FD10033DD5C /* Info.plist */,
@@ -124,9 +168,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09355561F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 in Resources */,
+				C093555A1F6B71AF0033DD5C /* Sampha.mp3 in Resources */,
 				C09355441F6A2FD10033DD5C /* LaunchScreen.storyboard in Resources */,
+				C09355671F6B7D580033DD5C /* sampha.png in Resources */,
+				C093555F1F6B7D2F0033DD5C /* blck.jpg in Resources */,
+				C09355651F6B7D580033DD5C /* jamis.png in Resources */,
+				C09355541F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 in Resources */,
 				C09355411F6A2FD10033DD5C /* Assets.xcassets in Resources */,
+				C093555C1F6B71E20033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 in Resources */,
+				C09355501F6B70DB0033DD5C /* 01. High Hopes.mp3 in Resources */,
+				C09355661F6B7D580033DD5C /* pndtwo.png in Resources */,
+				C09355521F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 in Resources */,
 				C093553F1F6A2FD10033DD5C /* Main.storyboard in Resources */,
+				C09355581F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 in Resources */,
+				C09355641F6B7D580033DD5C /* tiber.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C093554C1F6B39B10033DD5C /* Song.swift in Sources */,
 				C093553C1F6A2FD10033DD5C /* ViewController.swift in Sources */,
 				C093553A1F6A2FD10033DD5C /* AppDelegate.swift in Sources */,
+				C093554E1F6B6AD40033DD5C /* MusicTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
