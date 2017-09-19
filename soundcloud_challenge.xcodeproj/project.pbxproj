@@ -26,6 +26,9 @@
 		C09355651F6B7D580033DD5C /* jamis.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355611F6B7D580033DD5C /* jamis.png */; };
 		C09355661F6B7D580033DD5C /* pndtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355621F6B7D580033DD5C /* pndtwo.png */; };
 		C09355671F6B7D580033DD5C /* sampha.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355631F6B7D580033DD5C /* sampha.png */; };
+		C0C97B431F6E753E00B4CB2F /* SCAVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */; };
+		C0C97B451F6E84E900B4CB2F /* SCUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */; };
+		C0C97B471F6E9D8000B4CB2F /* SCContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		C09355611F6B7D580033DD5C /* jamis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jamis.png; sourceTree = "<group>"; };
 		C09355621F6B7D580033DD5C /* pndtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pndtwo.png; sourceTree = "<group>"; };
 		C09355631F6B7D580033DD5C /* sampha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sampha.png; sourceTree = "<group>"; };
+		C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCAVAudioPlayer.swift; sourceTree = "<group>"; };
+		C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCUIImageView.swift; sourceTree = "<group>"; };
+		C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 			children = (
 				C09355391F6A2FD10033DD5C /* AppDelegate.swift */,
 				C093553B1F6A2FD10033DD5C /* ViewController.swift */,
+				C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */,
+				C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */,
+				C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */,
 				C093555E1F6B7D2E0033DD5C /* blck.jpg */,
 				C093554D1F6B6AD40033DD5C /* MusicTableViewCell.swift */,
 				C09355601F6B7D580033DD5C /* tiber.png */,
@@ -193,7 +202,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C97B471F6E9D8000B4CB2F /* SCContainerView.swift in Sources */,
+				C0C97B431F6E753E00B4CB2F /* SCAVAudioPlayer.swift in Sources */,
 				C093554C1F6B39B10033DD5C /* Song.swift in Sources */,
+				C0C97B451F6E84E900B4CB2F /* SCUIImageView.swift in Sources */,
 				C093553C1F6A2FD10033DD5C /* ViewController.swift in Sources */,
 				C093553A1F6A2FD10033DD5C /* AppDelegate.swift in Sources */,
 				C093554E1F6B6AD40033DD5C /* MusicTableViewCell.swift in Sources */,
@@ -360,6 +372,7 @@
 				C093554A1F6A2FD10033DD5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chance" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-sm-IMc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chance" translatesAutoresizingMaskIntoConstraints="NO" id="tE2-sm-IMc" customClass="SCUIView" customModule="soundcloud_challenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpi-Dt-DkF">
@@ -210,7 +210,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Q3n-Gv-ocs" secondAttribute="trailing" id="p1p-rt-V75"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2D-oN-Chc" userLabel="ContainerView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2D-oN-Chc" userLabel="ContainerView" customClass="SCContainerView" customModule="soundcloud_challenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="624"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXZ-Zi-RdY" userLabel="HeaderView">
@@ -436,7 +436,9 @@
                         <outlet property="backViewPlaycountLabel" destination="RHQ-KN-H65" id="nV2-nc-q0s"/>
                         <outlet property="backViewSongtitleLabel" destination="oZg-lb-Q1b" id="0Ee-b1-rRd"/>
                         <outlet property="containerView" destination="U2D-oN-Chc" id="wxY-ZL-uxS"/>
+                        <outlet property="navigationBarView" destination="MXZ-Zi-RdY" id="12r-KD-DZW"/>
                         <outlet property="tabBarContainer" destination="U4k-iO-TdZ" id="gXT-34-pRV"/>
+                        <outlet property="tableView" destination="4eZ-Wf-1oU" id="W3W-XW-765"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

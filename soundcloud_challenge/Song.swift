@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 class Song {
+    
+    enum SongState {
+        case playing
+        case paused
+        case stopped
+        case none
+    }
+    
     var title: String = "Unknown"
     var uploader: String = "Unknown"
     var likeCount: Int = 100
@@ -18,6 +26,7 @@ class Song {
     var mp3Link: String = "Unknown"
     var albumArtLink: String = "Unknown"
     var ablumImage: UIImage?
+    var songState: SongState = .none
     
     var albumArtInUrlFormat: URL? {
         get {
@@ -32,7 +41,7 @@ class Song {
     var mp3LinkInUrlFormat: URL? {
         get {
             if let url = URL(string: self.mp3Link) {
-              return url
+                return url
             } else {
                 return nil
             }
@@ -49,4 +58,4 @@ class Song {
     }
     
 }
- 
+
