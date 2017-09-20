@@ -44,3 +44,57 @@ class MusicTableViewCell: UITableViewCell {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+//if !containerView.isAnimating && !tabBarContainer.isAnimating {
+//    let translation = gesture.translation(in: self.containerView)
+//    let opacityPercent = translation.y / containerView.frame.height
+//    
+//    _ = containerView.contents.map {$0.alpha = opacityPercent}
+//    
+//    self.containerView .frame.origin.y = translation.y - containerView.frame.height
+//    
+//    var editedPoint = CGPoint(x: 0, y: 0)
+//    
+//    if gesture.state == .ended {
+//        let velocity = gesture.velocity(in: self.containerView)
+//        if velocity.y < 300 && containerView.isUp {
+//            if translation.y < containerView.frame.height/2 {
+//                editedPoint = CGPoint(x: 0, y: -containerView.frame.height+3)
+//            }
+//        } else {
+//            editedPoint = CGPoint(x:0,y: 0)
+//        }
+//        
+//        UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut,.curveEaseIn], animations: {
+//            self.containerView.isAnimating = true
+//            self.tabBarContainer.isAnimating = true
+//            self.containerView.frame.origin = editedPoint
+//            
+//            if editedPoint.x > self.containerView.frame.height/2 && self.tabBarContainer.isUp {
+//                self.containerView.isUp = true
+//                self.tabBarContainer.center.y += self.tabBarContainer.frame.height
+//                self.tabBarContainer.isUp = false
+//            } else {
+//                self.containerView.isUp = false
+//                self.tabBarContainer.center.y -= self.tabBarContainer.frame.height
+//                self.tabBarContainer.isUp = true
+//            }
+//            //
+//            _ = self.containerView.contents.map {$0.alpha = 1}
+//        }, completion: { (bool) in
+//            if bool {
+//                self.containerView.isAnimating = false
+//                self.tabBarContainer.isAnimating = false
+//            }
+//        })
+//    }
+//}

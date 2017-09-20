@@ -14,14 +14,11 @@ class SCAVAudioPlayer: AVAudioPlayer {
     func play(song: Song){
         super.play()
         song.songState = .playing
-        
     }
     
      func pause(song: Song){
         super.pause()
-        
         song.songState = .paused
-        
     }
 
 }

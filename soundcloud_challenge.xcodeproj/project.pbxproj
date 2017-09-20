@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C07D5AC91F72F7E400A88BA6 /* SCMusicDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07D5AC81F72F7E400A88BA6 /* SCMusicDatabase.swift */; };
+		C07D5ACB1F73003900A88BA6 /* SCTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07D5ACA1F73003900A88BA6 /* SCTabBarView.swift */; };
 		C093553A1F6A2FD10033DD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09355391F6A2FD10033DD5C /* AppDelegate.swift */; };
 		C093553C1F6A2FD10033DD5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C093553B1F6A2FD10033DD5C /* ViewController.swift */; };
 		C093553F1F6A2FD10033DD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C093553D1F6A2FD10033DD5C /* Main.storyboard */; };
@@ -21,17 +23,14 @@
 		C09355581F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355571F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 */; };
 		C093555A1F6B71AF0033DD5C /* Sampha.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C09355591F6B71AF0033DD5C /* Sampha.mp3 */; };
 		C093555C1F6B71E20033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */; };
-		C093555F1F6B7D2F0033DD5C /* blck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C093555E1F6B7D2E0033DD5C /* blck.jpg */; };
-		C09355641F6B7D580033DD5C /* tiber.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355601F6B7D580033DD5C /* tiber.png */; };
-		C09355651F6B7D580033DD5C /* jamis.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355611F6B7D580033DD5C /* jamis.png */; };
-		C09355661F6B7D580033DD5C /* pndtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355621F6B7D580033DD5C /* pndtwo.png */; };
-		C09355671F6B7D580033DD5C /* sampha.png in Resources */ = {isa = PBXBuildFile; fileRef = C09355631F6B7D580033DD5C /* sampha.png */; };
 		C0C97B431F6E753E00B4CB2F /* SCAVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */; };
 		C0C97B451F6E84E900B4CB2F /* SCUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */; };
 		C0C97B471F6E9D8000B4CB2F /* SCContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C07D5AC81F72F7E400A88BA6 /* SCMusicDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCMusicDatabase.swift; sourceTree = "<group>"; };
+		C07D5ACA1F73003900A88BA6 /* SCTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCTabBarView.swift; sourceTree = "<group>"; };
 		C09355361F6A2FD10033DD5C /* soundcloud_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soundcloud_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09355391F6A2FD10033DD5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C093553B1F6A2FD10033DD5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,11 +48,6 @@
 		C09355591F6B71AF0033DD5C /* Sampha.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sampha.mp3; sourceTree = "<group>"; };
 		C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "cat soup - icasm 2096 - 09 ledge glow.mp3"; sourceTree = "<group>"; };
 		C093555D1F6B78290033DD5C /* 01 Sonic Boom.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "01 Sonic Boom.mp3"; sourceTree = "<group>"; };
-		C093555E1F6B7D2E0033DD5C /* blck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blck.jpg; sourceTree = "<group>"; };
-		C09355601F6B7D580033DD5C /* tiber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tiber.png; sourceTree = "<group>"; };
-		C09355611F6B7D580033DD5C /* jamis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jamis.png; sourceTree = "<group>"; };
-		C09355621F6B7D580033DD5C /* pndtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pndtwo.png; sourceTree = "<group>"; };
-		C09355631F6B7D580033DD5C /* sampha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sampha.png; sourceTree = "<group>"; };
 		C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCAVAudioPlayer.swift; sourceTree = "<group>"; };
 		C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCUIImageView.swift; sourceTree = "<group>"; };
 		C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCContainerView.swift; sourceTree = "<group>"; };
@@ -70,6 +64,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C07D5AC61F72F71400A88BA6 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C093555D1F6B78290033DD5C /* 01 Sonic Boom.mp3 */,
+				C093554F1F6B70DB0033DD5C /* 01. High Hopes.mp3 */,
+				C09355551F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 */,
+				C09355591F6B71AF0033DD5C /* Sampha.mp3 */,
+				C09355571F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 */,
+				C09355531F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 */,
+				C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */,
+				C09355511F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 */,
+			);
+			name = Music;
+			sourceTree = "<group>";
+		};
+		C07D5AC71F72F76600A88BA6 /* SCCompoments */ = {
+			isa = PBXGroup;
+			children = (
+				C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */,
+				C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */,
+				C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */,
+				C07D5AC81F72F7E400A88BA6 /* SCMusicDatabase.swift */,
+				C07D5ACA1F73003900A88BA6 /* SCTabBarView.swift */,
+			);
+			name = SCCompoments;
+			sourceTree = "<group>";
+		};
 		C093552D1F6A2FD10033DD5C = {
 			isa = PBXGroup;
 			children = (
@@ -89,26 +110,12 @@
 		C09355381F6A2FD10033DD5C /* soundcloud_challenge */ = {
 			isa = PBXGroup;
 			children = (
+				C07D5AC71F72F76600A88BA6 /* SCCompoments */,
+				C07D5AC61F72F71400A88BA6 /* Music */,
 				C09355391F6A2FD10033DD5C /* AppDelegate.swift */,
 				C093553B1F6A2FD10033DD5C /* ViewController.swift */,
-				C0C97B421F6E753E00B4CB2F /* SCAVAudioPlayer.swift */,
-				C0C97B441F6E84E900B4CB2F /* SCUIImageView.swift */,
-				C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */,
-				C093555E1F6B7D2E0033DD5C /* blck.jpg */,
 				C093554D1F6B6AD40033DD5C /* MusicTableViewCell.swift */,
-				C09355601F6B7D580033DD5C /* tiber.png */,
-				C09355611F6B7D580033DD5C /* jamis.png */,
-				C09355621F6B7D580033DD5C /* pndtwo.png */,
-				C09355631F6B7D580033DD5C /* sampha.png */,
 				C093553D1F6A2FD10033DD5C /* Main.storyboard */,
-				C093555D1F6B78290033DD5C /* 01 Sonic Boom.mp3 */,
-				C093554F1F6B70DB0033DD5C /* 01. High Hopes.mp3 */,
-				C09355551F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 */,
-				C09355591F6B71AF0033DD5C /* Sampha.mp3 */,
-				C09355571F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 */,
-				C09355531F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 */,
-				C093555B1F6B71E10033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 */,
-				C09355511F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 */,
 				C093554B1F6B39B10033DD5C /* Song.swift */,
 				C09355401F6A2FD10033DD5C /* Assets.xcassets */,
 				C09355421F6A2FD10033DD5C /* LaunchScreen.storyboard */,
@@ -180,18 +187,13 @@
 				C09355561F6B710F0033DD5C /* 03 - Summer Friends (feat Jeremih Francis The Lights).mp3 in Resources */,
 				C093555A1F6B71AF0033DD5C /* Sampha.mp3 in Resources */,
 				C09355441F6A2FD10033DD5C /* LaunchScreen.storyboard in Resources */,
-				C09355671F6B7D580033DD5C /* sampha.png in Resources */,
-				C093555F1F6B7D2F0033DD5C /* blck.jpg in Resources */,
-				C09355651F6B7D580033DD5C /* jamis.png in Resources */,
 				C09355541F6B70F70033DD5C /* Bout It- PND_211209348_soundcloud.mp3 in Resources */,
 				C09355411F6A2FD10033DD5C /* Assets.xcassets in Resources */,
 				C093555C1F6B71E20033DD5C /* cat soup - icasm 2096 - 09 ledge glow.mp3 in Resources */,
 				C09355501F6B70DB0033DD5C /* 01. High Hopes.mp3 in Resources */,
-				C09355661F6B7D580033DD5C /* pndtwo.png in Resources */,
 				C09355521F6B70E80033DD5C /* On My Mind_246964322_soundcloud.mp3 in Resources */,
 				C093553F1F6A2FD10033DD5C /* Main.storyboard in Resources */,
 				C09355581F6B71640033DD5C /* J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud.mp3 in Resources */,
-				C09355641F6B7D580033DD5C /* tiber.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +208,11 @@
 				C0C97B431F6E753E00B4CB2F /* SCAVAudioPlayer.swift in Sources */,
 				C093554C1F6B39B10033DD5C /* Song.swift in Sources */,
 				C0C97B451F6E84E900B4CB2F /* SCUIImageView.swift in Sources */,
+				C07D5AC91F72F7E400A88BA6 /* SCMusicDatabase.swift in Sources */,
 				C093553C1F6A2FD10033DD5C /* ViewController.swift in Sources */,
 				C093553A1F6A2FD10033DD5C /* AppDelegate.swift in Sources */,
 				C093554E1F6B6AD40033DD5C /* MusicTableViewCell.swift in Sources */,
+				C07D5ACB1F73003900A88BA6 /* SCTabBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -161,7 +161,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4k-iO-TdZ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U4k-iO-TdZ" customClass="SCTabBarView" customModule="soundcloud_challenge" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="624" width="375" height="43"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q3n-Gv-ocs">

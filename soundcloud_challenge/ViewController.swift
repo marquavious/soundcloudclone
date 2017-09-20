@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: SCContainerView!
-    @IBOutlet weak var tabBarContainer: UIView!
+    @IBOutlet weak var tabBarContainer: SCTabBarView!
     @IBOutlet weak var backViewImageView: SCUIView!
     @IBOutlet weak var backViewArtistLabel: UILabel!
     @IBOutlet weak var backViewSongtitleLabel: UILabel!
@@ -23,43 +23,48 @@ class ViewController: UIViewController {
     let orangeBarHeight: CGFloat = 3
     var currentlyPlayingSong: Song?
     var audioPlayer = SCAVAudioPlayer()
-    
-    var songs = [
-        Song(title: "Sonic Boom", uploader: "Roy Woods", likeCount: 230, playCount: 940, mp3Link: "01 Sonic Boom", ablumImage: #imageLiteral(resourceName: "roy")),
-        Song(title: "High Hopes", uploader: "partyomo", likeCount: 230, playCount: 940, mp3Link: "01. High Hopes", ablumImage: #imageLiteral(resourceName: "pnd")),
-        Song(title: "Summer Friends (feat Jeremih Francis The Lights)", uploader: "Chance The Rapper", likeCount: 230, playCount: 940, mp3Link: "03 - Summer Friends (feat Jeremih Francis The Lights)", ablumImage: #imageLiteral(resourceName: "chance")),
-        Song(title: "Without", uploader: "Sampha", likeCount: 230, playCount: 940, mp3Link: "Sampha", ablumImage: #imageLiteral(resourceName: "sampha")),
-        Song(title: "Reaper - Exodia (jam edit)", uploader: "jamvvis", likeCount: 230, playCount: 940, mp3Link: "J.K. The Reaper - Exodia (jam edit)_262577496_soundcloud", ablumImage: #imageLiteral(resourceName: "jamis")),
-        Song(title: "Bout It - PND", uploader: "partyomo", likeCount: 230, playCount: 940, mp3Link: "Bout It- PND_211209348_soundcloud", ablumImage: #imageLiteral(resourceName: "pndtwo")),
-        Song(title: "ledge glow", uploader: "cat soup", likeCount: 230, playCount: 940, mp3Link: "cat soup - icasm 2096 - 09 ledge glow", ablumImage: #imageLiteral(resourceName: "blck")),
-        Song(title: "On My Mind", uploader: "Tiber", likeCount: 230, playCount: 940, mp3Link: "On My Mind_246964322_soundcloud", ablumImage: #imageLiteral(resourceName: "tiber")),
-        ]
+    let songs = SCMusicDatabase.songs
     
     override func viewDidLoad() {
         super.viewDidLoad()
         backViewImageView.delegate = self
+        containerView.isUp = false
+        tabBarContainer.isUp = true
         addTouchGuesterToSelectedView(selectedView:backViewImageView)
-        containerView.contents.append(tableView)
-        containerView.contents.append(navigationBarView)
+        containerView.addViews([tableView,navigationBarView])
     }
-
+    
     func showNowPlaying(){
         UIView.animate(withDuration: 0.10, delay: 0.10, options: [.curveEaseIn, .curveEaseOut], animations: {
-            self.containerView.center.y -= self.containerView.frame.height-self.orangeBarHeight
+            self.containerView.isAnimating = true
+            self.tabBarContainer.isAnimating = true
+            self.containerView.center.y -= self.containerView.height-self.orangeBarHeight
             self.tabBarContainer.center.y += self.tabBarContainer.frame.height
             UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
         }) { (bool) in
-            self.containerView.isUp = true
+            if bool {
+                self.containerView.isUp = true
+                self.tabBarContainer.isUp = false
+                self.containerView.isAnimating = false
+                self.tabBarContainer.isAnimating = false
+            }
         }
     }
     
     func dissmissNowPlaying(){
         UIView.animate(withDuration: 0.10, delay: 0.10, options: [.curveEaseIn,.curveEaseOut], animations: {
-            self.containerView.center.y += self.containerView.frame.height-self.orangeBarHeight
+            self.containerView.isAnimating = true
+            self.tabBarContainer.isAnimating = true
+            self.containerView.center.y += self.containerView.height-self.orangeBarHeight
             self.tabBarContainer.center.y -= self.tabBarContainer.frame.height
             UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
         }) { (bool) in
-            self.containerView.isUp = false
+            if bool {
+                self.containerView.isUp = false
+                self.tabBarContainer.isUp = true
+                self.containerView.isAnimating = false
+                self.tabBarContainer.isAnimating = false
+            }
         }
     }
     
@@ -69,8 +74,15 @@ class ViewController: UIViewController {
         selectedView.addGestureRecognizer(gesture)
     }
     
+    func setUpBackgroundView(song:Song){
+        backViewImageView.image = song.ablumImage
+        backViewArtistLabel.text = song.uploader
+        backViewSongtitleLabel.text = song.title
+        backViewPlaycountLabel.text = "■\(song.playCount)"
+        self.view.layoutSubviews()
+    }
+    
     func startSong(song:Song){
-        
         do {
             if let player = try? SCAVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: song.mp3Link, ofType: "mp3")!)){
                 audioPlayer = player
@@ -79,17 +91,13 @@ class ViewController: UIViewController {
                 song.songState = .playing
                 self.backViewImageView.removedBlurredView()
                 
-            } else {
-                fatalError("Error playing \(song.title)")
-            }
+            } else {fatalError("Error playing \(song.title)")}
         }
     }
     
     func handleSwitchSongState(){
         
-        guard let song = currentlyPlayingSong else {
-            return
-        }
+        guard let song = currentlyPlayingSong else { return }
         
         switch song.songState {
         case .paused:
@@ -99,14 +107,15 @@ class ViewController: UIViewController {
             audioPlayer.pause(song: song)
             backViewImageView.addBlurredView()
         }
-        
     }
     
     func runAnimation(){
         if self.containerView.isUp {
             dissmissNowPlaying()
-        } else {
+        } else if !self.containerView.isUp {
             showNowPlaying()
+        } else {
+            print("idk")
         }
     }
     
@@ -123,11 +132,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let song = songs[indexPath.row]
-        
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
         let musicCell = tableView.dequeueReusableCell(withIdentifier: "MuisicCell", for: indexPath) as! MusicTableViewCell
-        
+        let song = songs[indexPath.row]
         musicCell.song = song
         
         if indexPath.row == 0 {
@@ -135,16 +142,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             return headerCell
         }
-        
-    }
-    
-    func setUpBackgroundView(song:Song){
-        backViewImageView.image = song.ablumImage
-        backViewArtistLabel.text = song.uploader
-        backViewSongtitleLabel.text = song.title
-        backViewPlaycountLabel.text = "■\(song.playCount)"
-        self.view.layoutSubviews()
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -171,47 +168,54 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController: SCContainerViewDelegate {
     
     func imageViewWasDraggedToPoint(point: CGPoint, gesture: UIPanGestureRecognizer) {
-        
         let translation = gesture.translation(in: self.containerView)
+        let velocity = gesture.velocity(in: self.containerView)
         let opacityPercent = translation.y / containerView.frame.height
-        
         _ = containerView.contents.map {$0.alpha = opacityPercent}
+        self.containerView.frame.origin.y = translation.y - containerView.height
+        var baseCGPoint = CGPoint(x: 0, y: 0)
+        var tabBarBaseCGPoint = CGPoint(x: 0, y: 0)
         
-        self.containerView .frame.origin.y = translation.y - containerView.frame.height
-        
-        var editedPoint = CGPoint(x: 0, y: 0)
+        self.containerView .frame.origin.y = translation.y - containerView.height
         
         if gesture.state == .ended {
-            let velocity = gesture.velocity(in: self.containerView)
-            
-            if velocity.y < 300 {
-
-                if translation.y < containerView.frame.height/2 {
-                    editedPoint = CGPoint(x: 0, y: -containerView.frame.height+3)
-                } else if translation.y > -containerView.frame.height/2 {
-                    editedPoint = CGPoint(x:0,y: 0)
+            if velocity.y < 1500 {
+                if translation.y < containerView.halfHeight {
+                    baseCGPoint = CGPoint(x: 0, y: -containerView.height+orangeBarHeight)
+                    tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height)
                 }
             } else {
-                editedPoint = CGPoint(x:0,y: 0)
+                baseCGPoint = CGPoint(x:0,y: 0)
+                tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height - tabBarContainer.frame.height)
             }
             
-            UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut,.curveEaseIn], animations: {
-                self.containerView.frame.origin = editedPoint
+            if !containerView.isAnimating && !tabBarContainer.isAnimating {
+                containerView.isAnimating = true
+                tabBarContainer.isAnimating = true
                 
-                if editedPoint.x > self.containerView.frame.height/2 {
-                    self.containerView.isUp = false
-                    self.tabBarContainer.center.y -= opacityPercent/self.tabBarContainer.frame.height
-                } else {
+                if baseCGPoint.y > self.containerView.halfHeight {
                     self.containerView.isUp = true
-                    self.tabBarContainer.center.y += opacityPercent/self.tabBarContainer.frame.height
+                } else {
+                    self.containerView.isUp = false
                 }
                 
-                _ = self.containerView.contents.map {$0.alpha = 1}
-            }, completion: { (bool) in
-                
-            })
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut,.curveEaseIn], animations: {
+                    self.containerView.frame.origin = baseCGPoint
+                    
+                    if baseCGPoint.y > self.containerView.halfHeight {
+                        self.tabBarContainer.frame.origin = tabBarBaseCGPoint
+                    } else {
+                        self.tabBarContainer.frame.origin = tabBarBaseCGPoint
+                    }
+                    _ = self.containerView.contents.map {$0.alpha = 1}
+                }, completion: { (bool) in
+                    if bool{
+                        self.containerView.isAnimating = false
+                        self.tabBarContainer.isAnimating = false
+                    }
+                })
+            }
         }
     }
-    
 }
 

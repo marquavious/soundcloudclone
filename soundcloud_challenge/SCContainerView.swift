@@ -9,20 +9,28 @@
 import Foundation
 import UIKit
 
-//protocol SCContainerViewDelegate {
-//    func animateOverviewAlpha(point: CGPoint);
-//}
 
 class SCContainerView: UIView {
     
     var overview: UIView?
     var contents = [UIView]()
     var isUp: Bool = false
+    var isAnimating: Bool = false
+    var halfHeight:CGFloat = 0.0
+    var height:CGFloat = 0.0 {
+        didSet{
+            halfHeight = self.height/2
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        height = self.frame.height
     }
-
     
+    func addViews(_ views:[UIView]){
+        for view in views {
+            contents.append(view)
+        }
+    }
 }
