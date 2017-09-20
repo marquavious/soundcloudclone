@@ -19,7 +19,7 @@ class SCUIView: UIImageView {
     
     func addBlurredView(){
         UIView.animate(withDuration: 0.10, delay: 0.0, options: [.curveEaseIn, .curveEaseOut], animations: {
-            self.blurEffectView?.layer.opacity = 1
+            self.blurEffectView?.alpha = 1
         }) { (bool) in
             
         }
@@ -27,7 +27,7 @@ class SCUIView: UIImageView {
     
     func removedBlurredView(){
         UIView.animate(withDuration: 0.10, delay: 0.0, options: [.curveEaseIn, .curveEaseOut], animations: {
-            self.blurEffectView?.layer.opacity = 0
+            self.blurEffectView?.alpha = 0
         }) { (bool) in
             
         }
@@ -38,7 +38,7 @@ class SCUIView: UIImageView {
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView?.frame = self.frame
         blurEffectView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurEffectView?.layer.opacity = 0
+        blurEffectView?.alpha = 0
         if let blurEffectView = blurEffectView {
             self.addSubview(blurEffectView)
         }

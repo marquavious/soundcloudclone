@@ -11,6 +11,9 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var rewindButton: UIView!
+    @IBOutlet weak var playButton: UIView!
+    @IBOutlet weak var skipButton: UIView!
     @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: SCContainerView!
@@ -19,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backViewArtistLabel: UILabel!
     @IBOutlet weak var backViewSongtitleLabel: UILabel!
     @IBOutlet weak var backViewPlaycountLabel: UILabel!
+    @IBOutlet weak var backViewTabBar: UIView!
     
     let orangeBarHeight: CGFloat = 3
     var currentlyPlayingSong: Song?
@@ -30,6 +34,10 @@ class ViewController: UIViewController {
         backViewImageView.delegate = self
         containerView.isUp = false
         tabBarContainer.isUp = true
+        backViewTabBar.alpha = 0
+        rewindButton.alpha = 0
+        playButton.alpha = 0
+        skipButton.alpha = 0
         addTouchGuesterToSelectedView(selectedView:backViewImageView)
         containerView.addViews([tableView,navigationBarView])
     }
@@ -40,6 +48,8 @@ class ViewController: UIViewController {
             self.tabBarContainer.isAnimating = true
             self.containerView.center.y -= self.containerView.height-self.orangeBarHeight
             self.tabBarContainer.center.y += self.tabBarContainer.frame.height
+            self.backViewImageView.blurEffectView?.alpha = 0
+            self.backViewTabBar.alpha = 1
             UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelStatusBar
         }) { (bool) in
             if bool {
@@ -56,6 +66,8 @@ class ViewController: UIViewController {
             self.containerView.isAnimating = true
             self.tabBarContainer.isAnimating = true
             self.containerView.center.y += self.containerView.height-self.orangeBarHeight
+            self.backViewImageView.blurEffectView?.alpha = 1
+            self.backViewTabBar.alpha = 0
             self.tabBarContainer.center.y -= self.tabBarContainer.frame.height
             UIApplication.shared.keyWindow?.windowLevel = UIWindowLevelNormal
         }) { (bool) in
@@ -75,7 +87,24 @@ class ViewController: UIViewController {
     }
     
     func setUpBackgroundView(song:Song){
-        backViewImageView.image = song.ablumImage
+        
+//        UIView.transition(with: self.backViewImageView,
+//                          duration:2,
+//                          options: .transitionCrossDissolve,
+//                          animations: {
+//                            self.backViewImageView.image = song.ablumImage
+//        },
+//                          completion: nil)
+
+        self.backViewImageView.image = song.ablumImage
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn,.curveEaseOut], animations: { 
+            self.backViewImageView.blurEffectView?.alpha = 0
+            self.backViewTabBar.alpha = 1
+        }) { (bool) in
+            
+        }
+        
         backViewArtistLabel.text = song.uploader
         backViewSongtitleLabel.text = song.title
         backViewPlaycountLabel.text = "■\(song.playCount)"
@@ -102,9 +131,19 @@ class ViewController: UIViewController {
         switch song.songState {
         case .paused:
             audioPlayer.play(song: song)
+            rewindButton.alpha = 0
+            playButton.alpha = 0
+            skipButton.alpha = 0
+            backViewArtistLabel.backgroundColor = .black
+            backViewSongtitleLabel.backgroundColor = .black
             backViewImageView.removedBlurredView()
         default:
             audioPlayer.pause(song: song)
+            rewindButton.alpha = 1
+            playButton.alpha = 1
+            skipButton.alpha = 1
+            backViewArtistLabel.backgroundColor = .clear
+            backViewSongtitleLabel.backgroundColor = .clear
             backViewImageView.addBlurredView()
         }
     }
@@ -170,26 +209,35 @@ extension ViewController: SCContainerViewDelegate {
     func imageViewWasDraggedToPoint(point: CGPoint, gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.containerView)
         let velocity = gesture.velocity(in: self.containerView)
-        let opacityPercent = translation.y / containerView.frame.height
+        var opacityPercent = translation.y / containerView.frame.height
         _ = containerView.contents.map {$0.alpha = opacityPercent}
+//        backViewTabBar.alpha = opacityPercent
+        backViewImageView.blurEffectView?.alpha = opacityPercent
+        
+        print(opacityPercent)
         self.containerView.frame.origin.y = translation.y - containerView.height
         var baseCGPoint = CGPoint(x: 0, y: 0)
-        var tabBarBaseCGPoint = CGPoint(x: 0, y: 0)
+        var tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height - tabBarContainer.frame.height)
         
         self.containerView .frame.origin.y = translation.y - containerView.height
         
-        if gesture.state == .ended {
-            if velocity.y < 1500 {
-                if translation.y < containerView.halfHeight {
-                    baseCGPoint = CGPoint(x: 0, y: -containerView.height+orangeBarHeight)
-                    tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height)
+        if !containerView.isAnimating && !tabBarContainer.isAnimating {
+            if gesture.state == .ended {
+                if velocity.y > 1500 {
+                    
+                    baseCGPoint = CGPoint(x:0,y: 0)
+                    tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height - tabBarContainer.frame.height)
+                    opacityPercent = 1
+                    
+                } else {
+                    
+                    if translation.y < containerView.halfHeight {
+                        baseCGPoint = CGPoint(x: 0, y: -containerView.height+orangeBarHeight)
+                        tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height)
+                        opacityPercent = 0
+                    }
                 }
-            } else {
-                baseCGPoint = CGPoint(x:0,y: 0)
-                tabBarBaseCGPoint = CGPoint(x: 0, y: view.frame.height - tabBarContainer.frame.height)
-            }
-            
-            if !containerView.isAnimating && !tabBarContainer.isAnimating {
+                
                 containerView.isAnimating = true
                 tabBarContainer.isAnimating = true
                 
@@ -201,13 +249,17 @@ extension ViewController: SCContainerViewDelegate {
                 
                 UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseOut,.curveEaseIn], animations: {
                     self.containerView.frame.origin = baseCGPoint
+                    self.tabBarContainer.frame.origin = tabBarBaseCGPoint
+                    self.backViewImageView.blurEffectView?.alpha = opacityPercent
                     
-                    if baseCGPoint.y > self.containerView.halfHeight {
-                        self.tabBarContainer.frame.origin = tabBarBaseCGPoint
+                    if baseCGPoint.y < self.containerView.height{
+                        self.backViewTabBar.alpha = 0
                     } else {
-                        self.tabBarContainer.frame.origin = tabBarBaseCGPoint
+                        self.backViewTabBar.alpha = 1
                     }
-                    _ = self.containerView.contents.map {$0.alpha = 1}
+        
+                    _ = self.containerView.contents.map {$0.alpha = 1} // Work on
+                    
                 }, completion: { (bool) in
                     if bool{
                         self.containerView.isAnimating = false
