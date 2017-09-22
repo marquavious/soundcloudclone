@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C07060171F758FF700DFB5AC /* SCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07060161F758FF700DFB5AC /* SCButton.swift */; };
 		C07D5AC91F72F7E400A88BA6 /* SCMusicDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07D5AC81F72F7E400A88BA6 /* SCMusicDatabase.swift */; };
 		C07D5ACB1F73003900A88BA6 /* SCTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07D5ACA1F73003900A88BA6 /* SCTabBarView.swift */; };
 		C093553A1F6A2FD10033DD5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09355391F6A2FD10033DD5C /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C07060161F758FF700DFB5AC /* SCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCButton.swift; sourceTree = "<group>"; };
 		C07D5AC81F72F7E400A88BA6 /* SCMusicDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCMusicDatabase.swift; sourceTree = "<group>"; };
 		C07D5ACA1F73003900A88BA6 /* SCTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCTabBarView.swift; sourceTree = "<group>"; };
 		C09355361F6A2FD10033DD5C /* soundcloud_challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = soundcloud_challenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 				C0C97B461F6E9D8000B4CB2F /* SCContainerView.swift */,
 				C07D5AC81F72F7E400A88BA6 /* SCMusicDatabase.swift */,
 				C07D5ACA1F73003900A88BA6 /* SCTabBarView.swift */,
+				C07060161F758FF700DFB5AC /* SCButton.swift */,
 			);
 			name = SCCompoments;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				C0C97B471F6E9D8000B4CB2F /* SCContainerView.swift in Sources */,
 				C0C97B431F6E753E00B4CB2F /* SCAVAudioPlayer.swift in Sources */,
 				C093554C1F6B39B10033DD5C /* Song.swift in Sources */,
+				C07060171F758FF700DFB5AC /* SCButton.swift in Sources */,
 				C0C97B451F6E84E900B4CB2F /* SCUIImageView.swift in Sources */,
 				C07D5AC91F72F7E400A88BA6 /* SCMusicDatabase.swift in Sources */,
 				C093553C1F6A2FD10033DD5C /* ViewController.swift in Sources */,

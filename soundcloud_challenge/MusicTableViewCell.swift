@@ -16,7 +16,7 @@ class MusicTableViewCell: UITableViewCell {
                 albumImageView.image = song.ablumImage
                 uploaderNameLabel.text = song.uploader
                 songTitleLabel.text = song.title
-                playCountLabel.text = "■\(song.playCount)"
+                playCountLabel.text = "\(song.playCount)"
                 songlLengthLabel.text = String(song.songLength)
             }
         }

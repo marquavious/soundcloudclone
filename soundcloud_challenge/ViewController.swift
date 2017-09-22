@@ -11,9 +11,9 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var rewindButton: UIView!
-    @IBOutlet weak var playButton: UIView!
-    @IBOutlet weak var skipButton: UIView!
+    @IBOutlet weak var rewindButton: SCButton!
+    @IBOutlet weak var playButton: SCButton!
+    @IBOutlet weak var skipButton: SCButton!
     @IBOutlet weak var navigationBarView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var containerView: SCContainerView!
@@ -34,10 +34,14 @@ class ViewController: UIViewController {
         backViewImageView.delegate = self
         containerView.isUp = false
         tabBarContainer.isUp = true
+        
         backViewTabBar.alpha = 0
         rewindButton.alpha = 0
         playButton.alpha = 0
         skipButton.alpha = 0
+        playButton.type = .play
+        rewindButton.type = .rewind
+        skipButton.type = .skip
         addTouchGuesterToSelectedView(selectedView:backViewImageView)
         containerView.addViews([tableView,navigationBarView])
     }
@@ -107,7 +111,7 @@ class ViewController: UIViewController {
         
         backViewArtistLabel.text = song.uploader
         backViewSongtitleLabel.text = song.title
-        backViewPlaycountLabel.text = "■\(song.playCount)"
+        backViewPlaycountLabel.text = "\(song.playCount)"
         self.view.layoutSubviews()
     }
     
@@ -171,14 +175,17 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
-        let musicCell = tableView.dequeueReusableCell(withIdentifier: "MuisicCell", for: indexPath) as! MusicTableViewCell
-        let song = songs[indexPath.row]
-        musicCell.song = song
+       
         
-        if indexPath.row == 0 {
+        let song = songs[indexPath.row]
+       
+        
+        if indexPath.row != 0 {
+            let musicCell = tableView.dequeueReusableCell(withIdentifier: "MusicTableViewCell", for: indexPath) as! MusicTableViewCell
+             musicCell.song = song
             return musicCell
         } else {
+             let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath)
             return headerCell
         }
     }
